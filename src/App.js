@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import NameBox from "./NameBox";
 
-function App() {
+const App = ({ vava }) => {
+  console.log(vava);
+  const arr = [
+    "윤상호",
+    "김한주",
+    "노재민",
+    "황예규",
+    "송재홍",
+    "서재완",
+    "박은비",
+    "김보미",
+    "김동현",
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      {arr.map((data, idx) => {
+        return <NameBox potato={data} key={idx} />;
+      })}
     </div>
   );
-}
+};
 
 export default App;
